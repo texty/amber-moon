@@ -47,7 +47,6 @@
     <!-- Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Anonymous+Pro"/>
-    <link rel="stylesheet" href="css/leaflet.css"/>
     <link rel="stylesheet" href="css/application.css">
     <style> 
         @keyframes blink{
@@ -64,6 +63,16 @@
     </style>
 </head>
 <body>
+
+<div id="map3" class="hidden2">
+    <div class="close">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 32.2402L32 2.24023" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 2.24023L32 32.2402" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+</div>
+<div class="mapBackground hidden2"></div>
 
 <div class="main-content">
     <div class="roww he-1">
@@ -422,7 +431,7 @@
 </div>
 
 <div id="finalmap-container">
-    <div id="finalmap"></div>
+    <div id="map2"></div>
     <div id="coordinates" class="hidden"></div>
 </div>
 
@@ -442,19 +451,20 @@
 <div class="main-content">
     <div class="roww he-3">
         <div class="block credits wi-7 he-2 le-1 to-1">
+            <p class="read-more" style="font-style: italic; padding-bottom: 25px;">Через технічні зміни у сервісі, який надавав супутникові знімки, проєкт був мінімально змінений у лютому 2025 року</p>
             <div class="block credits-job" style="text-align: right">
                 <p>Програмування та спецефекти</p>
                 <p>Дизайн і програмування</p>
                 <p>Моделювання</p>
                 <p>Розробка</p>
-                <p class="bottom-margin">Текст </p>
+                <p class="bottom-margin"><br>Текст</p>
                 <p class="small-caps"><a href="http://texty.org.ua">texty.org.ua</a></p>
             </div>
             <div class="block credits-name">
                 <p>Влад ГЕРАСИМЕНКО</p>
                 <p>Надя КЕЛЬМ</p>
                 <p>Анатолій БОНДАРЕНКО</p>
-                <p>Євгенія ДРОЗДОВА</p>
+                <p>Євгенія ДРОЗДОВА<br>Нікіта ГОЛОВІНСЬКИЙ</p>
                 <p class="bottom-margin">Ярослава ТИМОЩУК</p>
                 <p class="small-caps">iii · xxiv · mmxviii</p>
             </div>
@@ -472,9 +482,7 @@
 <!--</div>-->
 <!--</div>-->
 
-<script src="lib/leaflet.js"></script>
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise"></script>
-<script src="lib/leaflet-bing-layer.min.js"></script>
 <script src="lib/jquery-2.1.4.min.js"></script>
 <script src="lib/d3.v4.min.js"></script>
 
@@ -482,11 +490,16 @@
 <script src="js/req.js"></script>
 <script src="js/figure.js"></script>
 <script src="js/map.js"></script>
-<script src="js/finalmap.js"></script>
 <script src="js/main.js"></script>
 <script src="js/click_me.js"></script>
 <script src="js/share-behavior.js"></script>
 
+<!--MapLibre-->
+<link rel="stylesheet" href="lib/maplibre-5.0.1.min.css"/>
+<script src="lib/maplibre-5.0.1.min.js"></script>
+<script src="lib/pmtiles-4.1.0.min.js"></script>
+<script src="lib/turf.min.js"></script>
+<script src="js/maplibre_final.js"></script>
 
 <script>
     var _gaq = _gaq || [];
